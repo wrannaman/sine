@@ -1,0 +1,42 @@
+---
+
+setting:
+  backend:
+    name: keras
+    # backend: tensorflow
+    # parallel: 1
+
+model:
+  - input: point
+  - dense: 128
+  - activation: tanh
+  - dense: 1
+  - activation: tanh
+    name: above
+
+train:
+  data:
+    - pickle: data/train.pkl
+  epochs: 20
+  weights: best.w
+  log: sine-log
+
+validate:
+  data:
+    - pickle: data/validate.pkl
+  weights: best.w
+
+test:
+  data:
+    - pickle: data/test.pkl
+  weights: best.w
+
+evaluate:
+  data:
+    - pickle: data/evaluate.pkl
+  weights: best.w
+  destination: data/output.pkl
+
+loss:
+  - target: above
+    name: mean_squared_error
