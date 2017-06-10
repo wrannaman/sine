@@ -1,5 +1,8 @@
 # Sine
 
+![Sine Wave](http://kur.deepgram.com/_images/tutorial-plot-results.png)
+
+
 Predicting whether a given point is above or below a sine wave taken from [Kur](http://kur.deepgram.com/tutorial.html)
 
 There are three implementations: Kur, Keras, Tensorflow.
@@ -11,7 +14,6 @@ I started with Kur because it was the simplest, then moved down to Keras, and fi
 To learn Tensorflow and get familiar with the TFRecord batching as inputs to a model. The problem this model solves is contrived and
 generally garbage, but it's small enough to know what each line of code is doing.
 
-![Sine Wave](http://kur.deepgram.com/_images/tutorial-plot-results.png)
 
 ## To run Kur
  Take a look at the README in kur/README.md
