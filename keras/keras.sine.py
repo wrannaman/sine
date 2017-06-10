@@ -4,6 +4,7 @@ import pickle
 import numpy as np
 import tensorflow as tf
 import time
+
 with open('/Users/andrewpierno/Desktop/personal/dev/ai/sine/kur/data/train.pkl', 'rb') as fh:
     data = pickle.loads(fh.read())
 
@@ -34,7 +35,15 @@ for i in range(len(Y_Test)):
 ###########################################################################
 from keras.models import Sequential
 from keras.layers import Dense, Activation
+from keras.utils import plot_model
+from keras.callbacks import TensorBoard
 
+# Tensorboard
+###########################################################################
+tbCallBack = TensorBoard(log_dir='board', histogram_freq=0, write_graph=True, write_images=True)
+
+# Model
+###########################################################################
 model = Sequential([
     Dense(128, input_shape=(2,)),
     Activation('relu'),
@@ -46,9 +55,12 @@ model.compile(loss='mse',
               optimizer='rmsprop',
               metrics=['accuracy'])
 
+#Export model as png
+plot_model(model, to_file='model.png')
+
 # Train
 ###########################################################################
-model.fit(X, y_hot, epochs=25, batch_size=1000)
+model.fit(X, y_hot, epochs=25, batch_size=1000, callbacks=[tbCallBack])
 
 # Eval
 ###########################################################################
