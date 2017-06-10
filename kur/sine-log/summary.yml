@@ -1,7 +1,7 @@
-batches: 62500
-clocks: {all: 81.75605758999882, batch: 73.24585458844376, train: 77.19284278900886,
-  validate: 4.293959148984868}
-epochs: 20
-samples: 2000000
-sessions: 1
+batches: 149200
+clocks: {all: 189.350405315, batch: 169.3631154716686, train: 180.06815539801573,
+  validate: 8.705728737989375}
+epochs: 47
+samples: 4774400
+sessions: 4
 version: 3

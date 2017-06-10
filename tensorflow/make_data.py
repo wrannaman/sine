@@ -24,9 +24,15 @@ def makeDataSet(name, num_samples):
     writer = tf.python_io.TFRecordWriter(filename)
 
     for i in range(num_samples):
+        # Convert to one hot
+        _y = y[i]
+        if (y[i] == -1):
+            _y = 0
+
+        # single training example
         example = tf.train.Example(features=tf.train.Features(feature={
           'x': _float_list_feature(x[i]),
-          'y': _int64_feature(int(y[i]))
+          'y': _int64_feature(int(_y))
         }))
         writer.write(example.SerializeToString())
     writer.close()

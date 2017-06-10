@@ -23,6 +23,7 @@ with open('data/output.pkl', 'rb') as fh:
 print(list(data.keys()))
 
 # Result is model prediction, truth is ground truth
+
 diff = np.abs(data['truth']['above'] - data['result']['above']) < 1
 correct = diff.sum()
 total = len(diff)
