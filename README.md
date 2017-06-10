@@ -3,7 +3,9 @@
 ![Sine Wave](http://kur.deepgram.com/_images/tutorial-plot-results.png)
 
 
-Predicting whether a given point is above or below a sine wave taken from [Kur](http://kur.deepgram.com/tutorial.html)
+Predicting whether a given point is above or below a sine wave. 
+
+The original tutorial was taken from [Kur](http://kur.deepgram.com/tutorial.html) and looked like a great little model to use to explore other frameworks.
 
 There are three implementations: Kur, Keras, Tensorflow.
 
